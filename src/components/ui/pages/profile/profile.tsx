@@ -1,6 +1,10 @@
 import { FC } from 'react';
 
-import { Button, Input } from '@zlden/react-developer-burger-ui-components';
+import {
+  Button,
+  CloseIcon,
+  Input
+} from '@zlden/react-developer-burger-ui-components';
 import styles from './profile.module.css';
 import commonStyles from '../common.module.css';
 
@@ -34,7 +38,7 @@ export const ProfileUI: FC<ProfileUIProps> = ({
             error={false}
             errorText={''}
             size={'default'}
-            icon={'EditIcon'}
+            icon={isFormChanged.name ? 'CloseIcon' : 'EditIcon'}
           />
         </div>
         <div className='pb-6'>
@@ -47,7 +51,7 @@ export const ProfileUI: FC<ProfileUIProps> = ({
             error={false}
             errorText={''}
             size={'default'}
-            icon={'EditIcon'}
+            icon={isFormChanged.email ? 'CloseIcon' : 'EditIcon'}
           />
         </div>
         <div className='pb-6'>
@@ -60,10 +64,12 @@ export const ProfileUI: FC<ProfileUIProps> = ({
             error={false}
             errorText={''}
             size={'default'}
-            icon={'EditIcon'}
+            icon={isFormChanged.password ? 'CloseIcon' : 'EditIcon'}
           />
         </div>
-        {isFormChanged && (
+        {(isFormChanged.email ||
+          isFormChanged.name ||
+          isFormChanged.password) && (
           <div className={styles.button}>
             <Button
               type='secondary'
