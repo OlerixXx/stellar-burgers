@@ -2,18 +2,18 @@ import { FC, SyntheticEvent, useState } from 'react';
 import { LoginUI } from '@ui-pages';
 import {
   fetchGetUser,
-  fetchLoginUser,
-  fetchRegisterUser
+  fetchLoginUser
 } from '../../components/slices/userSlice';
 import { setCookie } from '../../utils/cookie';
 import { useDispatch } from '../../services/store';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export const Login: FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
@@ -25,7 +25,8 @@ export const Login: FC = () => {
         dispatch(fetchGetUser())
           .unwrap()
           .then(() => {
-            navigate('/');
+            const from = location.state?.from?.pathname || '/';
+            navigate(from, { replace: true });
           })
           .catch(({ message }) => alert(message));
       })

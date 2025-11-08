@@ -3,7 +3,7 @@ import { FC } from 'react';
 import styles from './profile-orders.module.css';
 
 import { ProfileOrdersUIProps } from './type';
-import { ProfileMenu, OrdersList } from '@components';
+import { OrdersList, ProfileMenu } from '@components';
 import { Preloader } from '@ui';
 
 export const ProfileOrdersUI: FC<ProfileOrdersUIProps> = ({

@@ -1,17 +1,11 @@
 import { FC, useEffect, useMemo } from 'react';
 import { Preloader } from '../ui/preloader';
 import { OrderInfoUI } from '../ui/order-info';
-import { TIngredient, TOrder } from '@utils-types';
+import { TIngredient } from '@utils-types';
 import { useSelector } from 'react-redux';
-import {
-  fetchIngredients,
-  getIngredientById,
-  getIngredients
-} from '../slices/ingredientsSlice';
+import { getIngredients } from '../slices/ingredientsSlice';
 import { useParams } from 'react-router-dom';
-import { getFeedOrders } from '../slices/feedOrdersSlice';
 import { useDispatch } from '../../services/store';
-import { deleteCookie } from '../../utils/cookie';
 import {
   fetchOrderById,
   getModalOrder,

@@ -1,10 +1,6 @@
 import { FC } from 'react';
 
-import {
-  Button,
-  CloseIcon,
-  Input
-} from '@zlden/react-developer-burger-ui-components';
+import { Button, Input } from '@zlden/react-developer-burger-ui-components';
 import styles from './profile.module.css';
 import commonStyles from '../common.module.css';
 

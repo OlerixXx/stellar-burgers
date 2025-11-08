@@ -1,15 +1,14 @@
 import { FC, useMemo } from 'react';
-import { TConstructorIngredient, TIngredient } from '@utils-types';
+import { TConstructorIngredient } from '@utils-types';
 import { BurgerConstructorUI } from '@ui';
-import { RootState, useDispatch, useSelector } from '../../services/store';
+import { useDispatch, useSelector } from '../../services/store';
 import {
   BurgerConstructorState,
   clearConstructor,
   getBun,
   getIngredients
 } from '../slices/burgerConstructorSlice';
-import { setCookie } from '../../utils/cookie';
-import { fetchGetUser, getUser } from '../slices/userSlice';
+import { getUser } from '../slices/userSlice';
 import {
   clearNewOrder,
   fetchNewOrder,

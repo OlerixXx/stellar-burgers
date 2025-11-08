@@ -7,11 +7,7 @@ import {
   getAllOrders,
   isOrdersRequest
 } from '../../components/slices/ordersSlice';
-import { Preloader } from '@ui';
-import {
-  fetchIngredients,
-  getIngredients
-} from '../../components/slices/ingredientsSlice';
+import { getIngredients } from '../../components/slices/ingredientsSlice';
 
 export const ProfileOrders: FC = () => {
   const dispatch = useDispatch();
@@ -21,7 +17,6 @@ export const ProfileOrders: FC = () => {
   const ingredients: TIngredient[] = useSelector(getIngredients);
 
   useEffect(() => {
-    if (!ingredients.length) dispatch(fetchIngredients());
     dispatch(fetchOrders());
   }, [dispatch]);
 

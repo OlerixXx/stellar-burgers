@@ -1,18 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import {
-  TConstructorIngredient,
-  TIngredient,
-  TOrder,
-  TOrdersData
-} from '@utils-types';
-import {
-  getFeedsApi,
-  getIngredientsApi,
-  getOrderByNumberApi,
-  getOrdersApi,
-  orderBurgerApi
-} from '@api';
-import { RootState } from '../../services/store';
+import { TOrder } from '@utils-types';
+import { getOrderByNumberApi } from '@api';
 
 type OrdersState = {
   modalOrder: TOrder | null;

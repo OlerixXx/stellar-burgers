@@ -1,12 +1,8 @@
 import { FC } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { ProfileMenuUI } from '@ui';
-import {
-  fetchGetUser,
-  fetchLoginUser,
-  fetchLogoutUser
-} from '../slices/userSlice';
-import { deleteCookie, setCookie } from '../../utils/cookie';
+import { fetchLogoutUser } from '../slices/userSlice';
+import { deleteCookie } from '../../utils/cookie';
 import { useDispatch } from '../../services/store';
 
 export const ProfileMenu: FC = () => {
@@ -19,7 +15,7 @@ export const ProfileMenu: FC = () => {
       .unwrap()
       .then((response) => {
         deleteCookie('accessToken');
-        localStorage.removeItem('refreshToken');
+        localStorage.clear();
         navigate('/login');
       })
       .catch(({ message }) => alert(message));

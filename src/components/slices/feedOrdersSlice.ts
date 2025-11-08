@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { TConstructorIngredient, TIngredient, TOrdersData } from '@utils-types';
-import { getFeedsApi, getIngredientsApi } from '@api';
-import { RootState } from '../../services/store';
+import { TOrdersData } from '@utils-types';
+import { getFeedsApi } from '@api';
 
 type FeedOrdersState = {
   feedOrders: TOrdersData;

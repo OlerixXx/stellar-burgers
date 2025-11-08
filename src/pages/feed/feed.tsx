@@ -4,14 +4,10 @@ import { TOrder } from '@utils-types';
 import { FC, useEffect } from 'react';
 import { useDispatch, useSelector } from '../../services/store';
 import {
-  feedOrdersSlice,
   fetchFeedOrders,
   getFeedOrders
 } from '../../components/slices/feedOrdersSlice';
-import {
-  fetchIngredients,
-  getIngredients
-} from '../../components/slices/ingredientsSlice';
+import { getIngredients } from '../../components/slices/ingredientsSlice';
 
 export const Feed: FC = () => {
   const dispatch = useDispatch();
@@ -22,7 +18,6 @@ export const Feed: FC = () => {
   const orders: TOrder[] = feedOrders.orders;
 
   useEffect(() => {
-    if (!ingredients.length) dispatch(fetchIngredients());
     dispatch(fetchFeedOrders());
   }, [dispatch]);
 

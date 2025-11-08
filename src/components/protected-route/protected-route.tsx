@@ -12,6 +12,7 @@ export const ProtectedRoute = ({ onlyUnAuth }: ProtectedRouteProps) => {
     (store: RootState) => store.user
   );
   const location = useLocation();
+  const navigate = useNavigate();
 
   if (!isInit || isLoading) {
     return <Preloader />;
@@ -28,7 +29,6 @@ export const ProtectedRoute = ({ onlyUnAuth }: ProtectedRouteProps) => {
     // в случае если объекта location.state?.from нет — а такое может быть , если мы зашли на страницу логина по прямому URL
     // мы сами создаём объект c указанием адреса и делаем переадресацию на главную страницу
     const from = location.state?.from || { pathname: '/' };
-
     return <Navigate replace to={from} />;
   }
 

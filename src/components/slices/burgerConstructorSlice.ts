@@ -1,12 +1,5 @@
-import {
-  createAsyncThunk,
-  createSlice,
-  nanoid,
-  PayloadAction
-} from '@reduxjs/toolkit';
-import { TConstructorIngredient, TIngredient, TOrder } from '@utils-types';
-import { getFeedsApi, getIngredientsApi, orderBurgerApi } from '@api';
-import { RootState } from '../../services/store';
+import { createSlice, nanoid, PayloadAction } from '@reduxjs/toolkit';
+import { TConstructorIngredient, TIngredient } from '@utils-types';
 
 export type BurgerConstructorState = {
   bun: TIngredient | null;

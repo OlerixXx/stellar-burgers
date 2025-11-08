@@ -1,12 +1,10 @@
-import { combineSlices, configureStore } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 
 import {
   TypedUseSelectorHook,
   useDispatch as dispatchHook,
   useSelector as selectorHook
 } from 'react-redux';
-import { ingredientsSlice } from '../components/slices/ingredientsSlice';
-import { burgerConstructorSlice } from '../components/slices/burgerConstructorSlice';
 import ingredientsSliceReducer from '../components/slices/ingredientsSlice';
 import burgerConstructorSliceReducer from '../components/slices/burgerConstructorSlice';
 import userSliceReducer from '../components/slices/userSlice';
