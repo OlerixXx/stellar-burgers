@@ -1,0 +1,45 @@
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { TOrder } from '@utils-types';
+import { getOrderByNumberApi } from '@api';
+
+type OrdersState = {
+  modalOrder: TOrder | null;
+  modalOrderRequest: boolean;
+};
+
+const initialState: OrdersState = {
+  modalOrder: null,
+  modalOrderRequest: false
+};
+
+export const modalOrderSlice = createSlice({
+  name: 'modalOrder',
+  initialState,
+  reducers: {},
+  selectors: {
+    getModalOrder: (state) => state.modalOrder,
+    isModalOrderRequest: (state) => state.modalOrderRequest
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchOrderById.pending, (state) => {
+        state.modalOrderRequest = true;
+      })
+      .addCase(fetchOrderById.rejected, (state) => {
+        state.modalOrderRequest = false;
+      })
+      .addCase(fetchOrderById.fulfilled, (state, action) => {
+        state.modalOrder = action.payload.orders[0];
+        state.modalOrderRequest = false;
+      });
+  }
+});
+
+export const fetchOrderById = createAsyncThunk(
+  'modalOrder/getById',
+  async (data: number) => getOrderByNumberApi(data)
+);
+
+export const { getModalOrder, isModalOrderRequest } = modalOrderSlice.selectors;
+export const {} = modalOrderSlice.actions;
+export default modalOrderSlice.reducer;

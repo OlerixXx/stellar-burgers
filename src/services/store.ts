@@ -5,15 +5,28 @@ import {
   useDispatch as dispatchHook,
   useSelector as selectorHook
 } from 'react-redux';
+import ingredientsSliceReducer from '../components/slices/ingredientsSlice';
+import burgerConstructorSliceReducer from '../components/slices/burgerConstructorSlice';
+import userSliceReducer from '../components/slices/userSlice';
+import feedOrdersSliceReducer from '../components/slices/feedOrdersSlice';
+import ordersSliceReducer from '../components/slices/ordersSlice';
+import modalOrderSliceRedicer from '../components/slices/modalOrderSlice';
 
-const rootReducer = () => {}; // Заменить на импорт настоящего редьюсера
+const rootReducer = {
+  ingredients: ingredientsSliceReducer,
+  burgerConstructor: burgerConstructorSliceReducer,
+  user: userSliceReducer,
+  feedOrders: feedOrdersSliceReducer,
+  orders: ordersSliceReducer,
+  modalOrder: modalOrderSliceRedicer
+};
 
 const store = configureStore({
   reducer: rootReducer,
   devTools: process.env.NODE_ENV !== 'production'
 });
 
-export type RootState = ReturnType<typeof rootReducer>;
+export type RootState = ReturnType<typeof store.getState>;
 
 export type AppDispatch = typeof store.dispatch;
 

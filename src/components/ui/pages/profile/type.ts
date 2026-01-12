@@ -6,7 +6,12 @@ export type ProfileUIProps = {
     email: string;
     password: string;
   };
-  isFormChanged: boolean;
+  // isFormChanged: boolean;
+  isFormChanged: {
+    name: boolean;
+    email: boolean;
+    password: boolean;
+  };
   handleSubmit: (e: SyntheticEvent) => void;
   handleCancel: (e: SyntheticEvent) => void;
   handleInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
