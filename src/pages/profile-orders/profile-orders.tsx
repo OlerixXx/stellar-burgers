@@ -6,8 +6,8 @@ import {
   fetchOrders,
   getAllOrders,
   isOrdersRequest
-} from '../../components/slices/ordersSlice';
-import { getIngredients } from '../../components/slices/ingredientsSlice';
+} from '../../components/slices/orders/ordersSlice';
+import { getIngredients } from '../../components/slices/ingredients/ingredientsSlice';
 
 export const ProfileOrders: FC = () => {
   const dispatch = useDispatch();

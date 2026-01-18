@@ -7,14 +7,14 @@ import {
   clearConstructor,
   getBun,
   getIngredients
-} from '../slices/burgerConstructorSlice';
-import { getUser } from '../slices/userSlice';
+} from '../slices/burger-constructor/burgerConstructorSlice';
+import { getUser } from '../slices/user/userSlice';
 import {
   clearNewOrder,
   fetchNewOrder,
   getNewOrder,
   isNewOrderRequest
-} from '../slices/ordersSlice';
+} from '../slices/orders/ordersSlice';
 import { useNavigate } from 'react-router-dom';
 
 export const BurgerConstructor: FC = () => {

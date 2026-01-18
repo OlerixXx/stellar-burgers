@@ -3,7 +3,7 @@ import { RegisterUI } from '@ui-pages';
 import {
   fetchGetUser,
   fetchRegisterUser
-} from '../../components/slices/userSlice';
+} from '../../components/slices/user/userSlice';
 import { useDispatch } from '../../services/store';
 import { useNavigate } from 'react-router-dom';
 import { setCookie } from '../../utils/cookie';

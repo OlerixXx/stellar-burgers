@@ -3,14 +3,14 @@ import { Preloader } from '../ui/preloader';
 import { OrderInfoUI } from '../ui/order-info';
 import { TIngredient } from '@utils-types';
 import { useSelector } from 'react-redux';
-import { getIngredients } from '../slices/ingredientsSlice';
+import { getIngredients } from '../slices/ingredients/ingredientsSlice';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from '../../services/store';
 import {
   fetchOrderById,
   getModalOrder,
   isModalOrderRequest
-} from '../slices/modalOrderSlice';
+} from '../slices/modal-order/modalOrderSlice';
 
 export const OrderInfo: FC = () => {
   const dispatch = useDispatch();

@@ -37,7 +37,7 @@ export const burgerConstructorSlice = createSlice({
       const index = state.ingredients.findIndex(
         (item) => item.id === action.payload
       );
-      if (index !== -1) {
+      if (index !== -1 && index > 0) {
         const ingredient = state.ingredients[index];
 
         state.ingredients.splice(index, 1);
@@ -49,7 +49,7 @@ export const burgerConstructorSlice = createSlice({
       const index = state.ingredients.findIndex(
         (item) => item.id === action.payload
       );
-      if (index !== -1) {
+      if (index !== -1 && index < state.ingredients.length - 1) {
         const ingredient = state.ingredients[index];
 
         state.ingredients.splice(index, 1);
