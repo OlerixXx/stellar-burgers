@@ -3,7 +3,7 @@ import { LoginUI } from '@ui-pages';
 import {
   fetchGetUser,
   fetchLoginUser
-} from '../../components/slices/userSlice';
+} from '../../components/slices/user/userSlice';
 import { setCookie } from '../../utils/cookie';
 import { useDispatch } from '../../services/store';
 import { useLocation, useNavigate } from 'react-router-dom';

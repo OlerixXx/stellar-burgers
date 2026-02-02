@@ -17,10 +17,10 @@ import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { ProtectedRoute } from '../protected-route';
 import { useDispatch } from '../../services/store';
 import { useEffect } from 'react';
-import { fetchGetUser, init } from '../slices/userSlice';
+import { fetchGetUser, init } from '../slices/user/userSlice';
 import { getCookie } from '../../utils/cookie';
 import { OrderModal } from '../order-modal';
-import { fetchIngredients } from '../slices/ingredientsSlice';
+import { fetchIngredients } from '../slices/ingredients/ingredientsSlice';
 import { Layout } from '../layout';
 
 const App = () => {

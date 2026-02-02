@@ -7,7 +7,7 @@ import { FeedInfo, OrdersList } from '@components';
 import { RefreshButton } from '@zlden/react-developer-burger-ui-components';
 import { Preloader } from '@ui';
 import { useSelector } from '../../../../services/store';
-import { ordersIsLoading } from '../../../slices/feedOrdersSlice';
+import { ordersIsLoading } from '../../../slices/feed-orders/feedOrdersSlice';
 
 export const FeedUI: FC<FeedUIProps> = memo(({ orders, handleGetFeeds }) => {
   const isLoading = useSelector(ordersIsLoading);

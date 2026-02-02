@@ -6,8 +6,8 @@ import { useDispatch, useSelector } from '../../services/store';
 import {
   fetchFeedOrders,
   getFeedOrders
-} from '../../components/slices/feedOrdersSlice';
-import { getIngredients } from '../../components/slices/ingredientsSlice';
+} from '../../components/slices/feed-orders/feedOrdersSlice';
+import { getIngredients } from '../../components/slices/ingredients/ingredientsSlice';
 
 export const Feed: FC = () => {
   const dispatch = useDispatch();
